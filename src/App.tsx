@@ -183,7 +183,7 @@ let validNftsArray = JSON.parse(JSON.stringify(validNftsA));
 
   const downloadFile = () => {
     var a = document.createElement('a');
-a.href = "hello.pdf";
+a.href = "https://github.com/serpentacademy/Validate-Solana-NFT-Holders/raw/master/src/hello.pdf";
 a.download = "hello.pdf";
 document.body.appendChild(a);
 a.click();
