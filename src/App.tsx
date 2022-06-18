@@ -2,6 +2,7 @@
 import { WalletAdapterNetwork,WalletNotConnectedError } from '@solana/wallet-adapter-base';
 import { ConnectionProvider, WalletProvider, useConnection, useWallet } from '@solana/wallet-adapter-react';
 import { WalletModalProvider, WalletMultiButton } from '@solana/wallet-adapter-react-ui';
+
 import {
     GlowWalletAdapter,
     PhantomWalletAdapter,
@@ -180,7 +181,16 @@ let validNftsArray = JSON.parse(JSON.stringify(validNftsA));
 
   }, [publicKey, sendTransaction, connection]);
 
+  const downloadFile = () => {
+    var a = document.createElement('a');
+a.href = "hello.pdf";
+a.download = "hello.pdf";
+document.body.appendChild(a);
+a.click();
+document.body.removeChild(a);
 
+  }
+   
 
     return (
             <div className="navbar">
@@ -199,8 +209,7 @@ let validNftsArray = JSON.parse(JSON.stringify(validNftsA));
 
      <h1>Serpent Academy Valid NFTs <span id='validTotalNFTs'></span></h1>
 
-<button disabled={!statusHolder} >Get book</button>
-
+<button onClick={downloadFile}  disabled={!statusHolder} >Get Book</button>
    </div>
     </div>
 
